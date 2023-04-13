@@ -88,6 +88,17 @@ class Proyek_model extends CI_Model
         return $this->db->delete($this->_table, array("kd_proyek" => $id));
     }
 
+    // public function getpekerjaantotal($kd_proyek, $id_rab)
+    // {
+    //     $query = $this->db->query("
+    //    select sum(p.volume * p.harga_satuan) as total
+    //     from pekerjaan p 
+    //     left join jenis_pekerjaan jp on p.id_rab=jp.id_rab
+    //     where p.kd_proyek = '$kd_proyek' and p.id_rab = '$id_rab'
+    //     ");
+    //     return $query;
+    // }
+
     public function getpekerjaantotal($kd_proyek, $id_rab)
     {
         $query = $this->db->query("
