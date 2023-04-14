@@ -45,11 +45,11 @@ class Keuangan extends CI_Controller
         $data['totalrab7'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '007')->row_array();
         $data['totalrab8'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '008')->row_array();
         $data['totalrab9'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '009')->row_array();
-        $data['totalrab10'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '0010')->row_array();
-        $data['totalrab11'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '0011')->row_array();
-        $data['totalrab12'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '0012')->row_array();
-        $data['totalrab13'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '0013')->row_array();
-        $data['totalrab14'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '0014')->row_array();
+        $data['totalrab10'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '010')->row_array();
+        $data['totalrab11'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '011')->row_array();
+        $data['totalrab12'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '012')->row_array();
+        $data['totalrab13'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '013')->row_array();
+        $data['totalrab14'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '014')->row_array();
 
 
         $data['totalraball'] = $this->Proyek_model->getpekerjaantotalall()->row_array();
