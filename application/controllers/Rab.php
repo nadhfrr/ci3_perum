@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Datarab extends CI_Controller
+class Rab extends CI_Controller
 {
     public function __construct()
     {
@@ -61,10 +61,11 @@ class Datarab extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('datarab/index', $data);
+        $this->load->view('rab/index', $data);
         $this->load->view('templates/footer');
     }
-    public function pengeluaran()
+
+    public function list_proyek()
     {
         $data['title'] = 'Daftar Pengeluaran RAB';
         $data["proyek"] = $this->Proyek_model->getAll();
@@ -78,7 +79,7 @@ class Datarab extends CI_Controller
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
-            $this->load->view('datarab/list', $data);
+            $this->load->view('rab/list', $data);
             $this->load->view('templates/footer');
         } else {
             $this->db->insert('user', ['proyek' => $this->input->post('proyek')]);
@@ -96,7 +97,7 @@ class Datarab extends CI_Controller
         }
         $this->Proyek_model->upstatusvalidasi($statusvalidasi, $kd_proyek);
 
-        redirect('datarab/pengeluaran');
+        redirect('rab/pengeluaran');
     }
 
     public function tolak_validasi($kd_proyek)
@@ -109,6 +110,6 @@ class Datarab extends CI_Controller
         // die;
         $this->db->where('kd_proyek', $kd_proyek);
         $this->db->update('proyek', $data);
-        redirect('datarab/pengeluaran');
+        redirect('rab/pengeluaran');
     }
 }
