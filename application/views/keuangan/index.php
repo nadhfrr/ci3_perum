@@ -791,7 +791,7 @@
                                         <th></th>
 
 
-                                        <th>Sub.Total ALL :</th>
+                                        <th>Total I s.d XIV :</th>
                                         <th><span class="totalForks">Rp<?= number_format ($totalraball['total']); ?></span></th>
                                     </tr>
                                 </tfoot>
