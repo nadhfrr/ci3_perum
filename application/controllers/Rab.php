@@ -53,6 +53,9 @@ class Rab extends CI_Controller
         $data['totalrab14'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '014')->row_array();
 
 
+        $data['totalall'] = $this->Proyek_model->getpekerjaantotalpr($kd_proyek)->row_array();
+
+
         $data['totalraball'] = $this->Proyek_model->getpekerjaantotalall()->row_array();
 
 
@@ -97,7 +100,7 @@ class Rab extends CI_Controller
         }
         $this->Proyek_model->upstatusvalidasi($statusvalidasi, $kd_proyek);
 
-        redirect('rab/pengeluaran');
+        redirect('rab/list_proyek');
     }
 
     public function tolak_validasi($kd_proyek)
@@ -110,6 +113,6 @@ class Rab extends CI_Controller
         // die;
         $this->db->where('kd_proyek', $kd_proyek);
         $this->db->update('proyek', $data);
-        redirect('rab/pengeluaran');
+        redirect('rab/list_proyek');
     }
 }

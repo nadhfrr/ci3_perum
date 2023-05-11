@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2023 at 01:43 PM
+-- Generation Time: May 03, 2023 at 05:08 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -87,9 +87,10 @@ INSERT INTO `jenis_pekerjaan` (`id_rab`, `nama_rab`) VALUES
 
 CREATE TABLE `pekerjaan` (
   `id_pekerjaan` int(11) NOT NULL,
+  `kd_proyek` int(11) NOT NULL,
   `id_rab` varchar(5) NOT NULL,
   `nama_pekerjaan` varchar(50) NOT NULL,
-  `volume` float NOT NULL,
+  `volume` double NOT NULL,
   `satuan` varchar(5) NOT NULL,
   `harga_satuan` int(11) NOT NULL,
   `jumlah_harga` int(11) NOT NULL
@@ -99,81 +100,229 @@ CREATE TABLE `pekerjaan` (
 -- Dumping data for table `pekerjaan`
 --
 
-INSERT INTO `pekerjaan` (`id_pekerjaan`, `id_rab`, `nama_pekerjaan`, `volume`, `satuan`, `harga_satuan`, `jumlah_harga`) VALUES
-(1, '001', 'bouwplank', 0, 'm1', 12000, 0),
-(2, '001', 'Galian tanah', 0, 'm3', 60000, 0),
-(3, '001', 'Pasang batu kumbung 1:3:10', 0, 'm3', 385000, 0),
-(4, '001', 'Urugan pasir pondasi', 0, 'm3', 264000, 0),
-(5, '001', 'Urug kembali lubang pondasi', 0, 'm3', 18500, 0),
-(6, '002', 'Pasangan bata merah trassram', 0, 'm2', 93250, 0),
-(7, '002', 'Pasangan bata merah 1:4:10', 0, 'm2', 90500, 0),
-(8, '003', 'Atap Galvalum', 0, 'm2', 110000, 0),
-(9, '003', 'List plank', 0, 'm1', 48000, 0),
-(10, '004', 'Rangka plafon', 0, 'm2', 17500, 0),
-(11, '004', 'Plafon Gypsumboard', 0, 'm2', 125000, 0),
-(12, '004', 'List Gypsum', 0, 'm1', 20000, 0),
-(13, '005', 'Keramik 40/40', 0, 'm2', 110000, 0),
-(14, '005', 'Keramik Dinding 20/20 KM', 0, 'm2', 125000, 0),
-(15, '005', 'Keramik Lantai 20/20 KM', 0, 'm2', 127500, 0),
-(16, '006', 'Kusen pintu Alumunium', 0, 'plong', 375000, 0),
-(17, '006', 'Kusen dan Daun jendela', 0, 'plong', 650000, 0),
-(18, '006', 'Daun pintu utama panil', 0, 'bh', 550000, 0),
-(19, '006', 'Daun pintu double triplex', 0, 'bh', 225000, 0),
-(20, '007', 'Cat dinding', 0, 'm2', 18000, 0),
-(21, '007', 'Cat list plank', 0, 'm2', 20000, 0),
-(22, '007', 'Cat genteng', 0, 'm2', 22500, 0),
-(23, '008', 'Genteng beton', 0, 'm2', 82500, 0),
-(24, '008', 'Bubungan', 0, 'm1', 55000, 0),
-(25, '008', 'Plafond', 0, 'm2', 67500, 0),
-(26, '002', 'Pasangan bata merah 1:4', 0, 'm2', 98500, 0),
-(27, '006', 'Pintu dan Kusen kamar mandi', 0, 'bh', 850000, 0),
-(28, '009', 'Beton Sloff 10x15', 0, 'm3', 2250000, 0),
-(29, '009', 'Beton kolom 10x10', 0, 'm3', 2285000, 0),
-(30, '009', 'Beton dak kanopy', 0, 'm3', 950000, 0),
-(31, '009', 'Beton ring balok 10x15', 0, 'm3', 2265000, 0),
-(32, '009', 'Stross ø 20', 0, 'm3', 1850000, 0),
-(33, '010', 'Plesteran dan Acian', 0, 'm2', 52500, 0),
-(34, '010', 'Tali air', 0, 'm1', 9000, 0),
-(35, '011', 'Pipa PVC 4"', 0, 'btg', 75000, 0),
-(36, '011', 'Pipa PVC 3"', 0, 'btg', 50000, 0),
-(37, '011', 'Pipa PVC 1/2"AW', 0, 'btg', 27000, 0),
-(38, '011', 'Closet jongkok', 0, 'bh', 175000, 0),
-(39, '011', 'Avur', 0, 'bh', 15000, 0),
-(40, '011', 'Floor drainage', 0, 'bh', 12500, 0),
-(41, '011', 'Kran air 1/2"', 0, 'bh', 15000, 0),
-(42, '011', 'Keni 1/2"', 0, 'bh', 3000, 0),
-(43, '011', 'Keni drat dalam 1/2"', 0, 'bh', 2500, 0),
-(44, '011', 'Keni 4"', 0, 'bh', 6000, 0),
-(45, '011', 'Overloop 3/4" - 1/2"', 0, 'bh', 3000, 0),
-(46, '011', 'Sock drat dalam 1/2"', 0, 'bh', 2500, 0),
-(47, '011', 'Tee 1/2"', 0, 'bh', 2500, 0),
-(48, '011', 'Stop kran', 0, 'bh', 15000, 0),
-(49, '011', 'Meteran air', 0, 'bh', 125000, 0),
-(50, '011', 'Pintu KM PVC', 0, 'bh', 225000, 0),
-(51, '011', 'Septic tank', 0, 'bh', 650000, 0),
-(52, '012', 'Selot besar', 0, 'bh', 90000, 0),
-(53, '012', 'Selot kecil', 0, 'bh', 45000, 0),
-(54, '012', 'Engsel pintu', 0, 'bh', 20000, 0),
-(55, '012', 'Engsel jendela', 0, 'bh', 17500, 0),
-(56, '012', 'Grendel', 0, 'bh', 7500, 0),
-(57, '012', 'Hak angin', 0, 'bh', 12500, 0),
-(58, '013', 'Cor jalan tapak', 0, 'm2', 150000, 0),
-(59, '014', 'Titik lampu', 0, 'ttk', 125000, 0),
-(60, '014', 'Saklar lampu', 0, 'ttk', 125000, 0),
-(61, '014', 'Stop kontak', 0, 'ttk', 125000, 0),
-(62, '014', 'MCB', 0, 'ttk', 140000, 0),
-(63, '014', 'Meteran listrik / BP + SLO', 0, 'bh', 2250000, 0),
-(64, '002', 'Pasangan batu alam', 0, 'm2', 650000, 0),
-(65, '011', 'closet duduk ex china', 0, 'bh', 800000, 0),
-(66, '005', 'Keramik Granit 60/60', 0, 'm2', 235000, 0),
-(67, '008', 'Atap spandek lantai 2', 0, 'm2', 225000, 0),
-(68, '009', 'Stross ø 30', 0, 'm3', 5500000, 0),
-(69, '009', 'Beton sloof 15x20', 0, 'm3', 4450000, 0),
-(70, '009', 'Pelat lantai 2 & teras t=10', 0, 'm3', 5275000, 0),
-(71, '009', 'Bordes & anak tangga', 0, 'm3', 3250000, 0),
-(72, '009', 'Beton dak kanopy & Meja dapur', 0, 'm3', 1750000, 0),
-(73, '004', 'Plafon Calsiboard', 0, 'm2', 50000, 0),
-(74, '007', 'Cat Plafond', 0, 'm2', 18500, 0);
+INSERT INTO `pekerjaan` (`id_pekerjaan`, `kd_proyek`, `id_rab`, `nama_pekerjaan`, `volume`, `satuan`, `harga_satuan`, `jumlah_harga`) VALUES
+(1, 1, '001', 'Bouwplank', 42, 'm1', 12000, 0),
+(2, 1, '001', 'Galian tanah', 25.5, 'm3', 60000, 0),
+(3, 1, '001', 'Pasang batu kumbung 1:3:10', 27.3, 'm3', 385000, 0),
+(4, 1, '001', 'Urugan pasir pondasi', 8.5, 'm3', 264000, 0),
+(5, 1, '001', 'Urug kembali lubang pondasi', 12, 'm3', 18500, 0),
+(6, 1, '002', 'Pasangan bata merah trassram', 5, 'm2', 93250, 0),
+(7, 1, '002', 'Pasangan bata merah 1:4:10', 3, 'm2', 90500, 0),
+(8, 1, '003', 'Atap Galvalum', 2, 'm2', 110000, 0),
+(9, 1, '003', 'List plank', 0, 'm1', 48000, 0),
+(10, 1, '004', 'Rangka plafon', 0, 'm2', 17500, 0),
+(11, 1, '004', 'Plafon Gypsumboard', 0, 'm2', 125000, 0),
+(12, 1, '004', 'List Gypsum', 5, 'm1', 20000, 0),
+(13, 1, '005', 'Keramik 40/40', 0, 'm2', 110000, 0),
+(14, 1, '005', 'Keramik Dinding 20/20 KM', 0, 'm2', 125000, 0),
+(15, 1, '005', 'Keramik Lantai 20/20 KM', 0, 'm2', 127500, 0),
+(16, 1, '006', 'Kusen pintu Alumunium', 0, 'plong', 375000, 0),
+(17, 1, '006', 'Kusen dan Daun jendela', 3, 'plong', 650000, 0),
+(18, 1, '006', 'Daun pintu utama panil', 0, 'bh', 550000, 0),
+(19, 1, '006', 'Daun pintu double triplex', 0, 'bh', 225000, 0),
+(20, 1, '007', 'Cat dinding', 10, 'm2', 18000, 0),
+(21, 1, '007', 'Cat list plank', 5, 'm2', 20000, 0),
+(22, 1, '007', 'Cat genteng', 3.5, 'm2', 22500, 0),
+(23, 1, '008', 'Genteng beton', 0, 'm2', 82500, 0),
+(24, 1, '008', 'Bubungan', 0, 'm1', 55000, 0),
+(25, 1, '008', 'Plafond', 2.3, 'm2', 67500, 0),
+(26, 1, '002', 'Pasangan bata merah 1:4', 0, 'm2', 98500, 0),
+(27, 1, '006', 'Pintu dan Kusen kamar mandi', 0, 'bh', 850000, 0),
+(28, 1, '009', 'Beton Sloff 10x15', 0, 'm3', 0, 0),
+(29, 1, '009', 'Beton kolom 10x10', 0, 'm3', 2285000, 0),
+(30, 1, '009', 'Beton dak kanopy', 3, 'm3', 950000, 0),
+(31, 1, '009', 'Beton ring balok 10x15', 0, 'm3', 2265000, 0),
+(32, 1, '009', 'Stross ø 20', 0, 'm3', 1850000, 0),
+(33, 1, '010', 'Plesteran dan Acian', 3.3, 'm2', 52500, 0),
+(34, 1, '010', 'Tali air', 7.5, 'm1', 9000, 0),
+(35, 1, '011', 'Pipa PVC 4', 5, 'btg', 75000, 0),
+(36, 1, '011', 'Pipa PVC 3"', 0, 'btg', 50000, 0),
+(37, 1, '011', 'Pipa PVC 1/2"AW', 0, 'btg', 27000, 0),
+(38, 1, '011', 'Closet jongkok', 1, 'bh', 175000, 0),
+(39, 1, '011', 'Avur', 0, 'bh', 15000, 0),
+(40, 1, '011', 'Floor drainage', 0, 'bh', 12500, 0),
+(41, 1, '011', 'Kran air 1/2', 15, 'bh', 15000, 0),
+(42, 1, '011', 'Keni 1/2"', 0, 'bh', 3000, 0),
+(43, 1, '011', 'Keni drat dalam 1/2"', 0, 'bh', 2500, 0),
+(44, 1, '011', 'Keni 4"', 0, 'bh', 6000, 0),
+(45, 1, '011', 'Overloop 3/4" - 1/2"', 0, 'bh', 3000, 0),
+(46, 1, '011', 'Sock drat dalam 1/2"', 0, 'bh', 2500, 0),
+(47, 1, '011', 'Tee 1/2"', 0, 'bh', 2500, 0),
+(48, 1, '011', 'Stop kran', 0, 'bh', 15000, 0),
+(49, 1, '011', 'Meteran air', 0, 'bh', 125000, 0),
+(50, 1, '011', 'Pintu KM PVC', 0, 'bh', 225000, 0),
+(51, 1, '011', 'Septic tank', 0, 'bh', 650000, 0),
+(52, 1, '012', 'Selot besar', 0, 'bh', 90000, 0),
+(53, 1, '012', 'Selot kecil', 0, 'bh', 45000, 0),
+(54, 1, '012', 'Engsel pintu', 15, 'bh', 20000, 0),
+(55, 1, '012', 'Engsel jendela', 20, 'bh', 17500, 0),
+(56, 1, '012', 'Grendel', 0, 'bh', 7500, 0),
+(57, 1, '012', 'Hak angin', 0, 'bh', 12500, 0),
+(58, 1, '013', 'Cor jalan tapak', 5.5, 'm2', 150000, 0),
+(59, 1, '014', 'Titik lampu', 0, 'ttk', 125000, 0),
+(60, 1, '014', 'Saklar lampu', 20, 'ttk', 125000, 0),
+(61, 1, '014', 'Stop kontak', 20, 'ttk', 125000, 0),
+(62, 1, '014', 'MCB', 0, 'ttk', 140000, 0),
+(63, 1, '014', 'Meteran listrik / BP + SLO', 15, 'bh', 2250000, 0),
+(64, 1, '002', 'Pasangan batu alam', 0, 'm2', 650000, 0),
+(65, 1, '011', 'closet duduk ex china', 0, 'bh', 800000, 0),
+(66, 1, '005', 'Keramik Granit 60/60', 4, 'm2', 235000, 0),
+(67, 1, '008', 'Atap spandek lantai 2', 0, 'm2', 225000, 0),
+(68, 1, '009', 'Stross ø 30', 0, 'm3', 5500000, 0),
+(69, 1, '009', 'Beton sloof 15x20', 0, 'm3', 4450000, 0),
+(70, 1, '009', 'Pelat lantai 2 & teras t=10', 2, 'm3', 5275000, 0),
+(71, 1, '009', 'Bordes & anak tangga', 0, 'm3', 3250000, 0),
+(72, 1, '009', 'Beton dak kanopy & Meja dapur', 0, 'm3', 1750000, 0),
+(73, 1, '004', 'Plafon Calsiboard', 0, 'm2', 50000, 0),
+(74, 1, '007', 'Cat Plafond', 2.3, 'm2', 18500, 0),
+(75, 2, '001', 'bouwplank', 0, 'm1', 12000, 0),
+(76, 2, '001', 'Galian tanah', 0, 'm3', 60000, 0),
+(77, 2, '001', 'Pasang batu kumbung 1:3:10', 0, 'm3', 385000, 0),
+(78, 2, '001', 'Urugan pasir pondasi', 0, 'm3', 264000, 0),
+(79, 2, '001', 'Urug kembali lubang pondasi', 0, 'm3', 18500, 0),
+(80, 2, '002', 'Pasangan bata merah trassram', 0, 'm2', 93250, 0),
+(81, 2, '002', 'Pasangan bata merah 1:4:10', 0, 'm2', 90500, 0),
+(82, 2, '003', 'Atap Galvalum', 0, 'm2', 110000, 0),
+(83, 2, '003', 'List plank', 0, 'm1', 48000, 0),
+(84, 2, '004', 'Rangka plafon', 0, 'm2', 17500, 0),
+(85, 2, '004', 'Plafon Gypsumboard', 0, 'm2', 125000, 0),
+(86, 2, '004', 'List Gypsum', 0, 'm1', 20000, 0),
+(87, 2, '005', 'Keramik 40/40', 0, 'm2', 110000, 0),
+(88, 2, '005', 'Keramik Dinding 20/20 KM', 0, 'm2', 125000, 0),
+(89, 2, '005', 'Keramik Lantai 20/20 KM', 0, 'm2', 127500, 0),
+(90, 2, '006', 'Kusen pintu Alumunium', 0, 'plong', 375000, 0),
+(91, 2, '006', 'Kusen dan Daun jendela', 0, 'plong', 650000, 0),
+(92, 2, '006', 'Daun pintu utama panil', 0, 'bh', 550000, 0),
+(93, 2, '006', 'Daun pintu double triplex', 0, 'bh', 225000, 0),
+(94, 2, '007', 'Cat dinding', 0, 'm2', 18000, 0),
+(95, 2, '007', 'Cat list plank', 0, 'm2', 20000, 0),
+(96, 2, '007', 'Cat genteng', 0, 'm2', 22500, 0),
+(97, 2, '008', 'Genteng beton', 0, 'm2', 82500, 0),
+(98, 2, '008', 'Bubungan', 0, 'm1', 55000, 0),
+(99, 2, '008', 'Plafond', 0, 'm2', 67500, 0),
+(100, 2, '002', 'Pasangan bata merah 1:4', 0, 'm2', 98500, 0),
+(101, 2, '006', 'Pintu dan Kusen kamar mandi', 0, 'bh', 850000, 0),
+(102, 2, '009', 'Beton Sloff 10x15', 0, 'm3', 2250000, 0),
+(103, 2, '009', 'Beton kolom 10x10', 0, 'm3', 2285000, 0),
+(104, 2, '009', 'Beton dak kanopy', 0, 'm3', 950000, 0),
+(105, 2, '009', 'Beton ring balok 10x15', 0, 'm3', 2265000, 0),
+(106, 2, '009', 'Stross ø 20', 0, 'm3', 1850000, 0),
+(107, 2, '010', 'Plesteran dan Acian', 0, 'm2', 52500, 0),
+(108, 2, '010', 'Tali air', 0, 'm1', 9000, 0),
+(109, 2, '011', 'Pipa PVC 4"', 0, 'btg', 75000, 0),
+(110, 2, '011', 'Pipa PVC 3"', 0, 'btg', 50000, 0),
+(111, 2, '011', 'Pipa PVC 1/2"AW', 0, 'btg', 27000, 0),
+(112, 2, '011', 'Closet jongkok', 0, 'bh', 175000, 0),
+(113, 2, '011', 'Avur', 0, 'bh', 15000, 0),
+(114, 2, '011', 'Floor drainage', 0, 'bh', 12500, 0),
+(115, 2, '011', 'Kran air 1/2"', 0, 'bh', 15000, 0),
+(116, 2, '011', 'Keni 1/2"', 0, 'bh', 3000, 0),
+(117, 2, '011', 'Keni drat dalam 1/2"', 0, 'bh', 2500, 0),
+(118, 2, '011', 'Keni 4"', 0, 'bh', 6000, 0),
+(119, 2, '011', 'Overloop 3/4" - 1/2"', 0, 'bh', 3000, 0),
+(120, 2, '011', 'Sock drat dalam 1/2"', 0, 'bh', 2500, 0),
+(121, 2, '011', 'Tee 1/2"', 0, 'bh', 2500, 0),
+(122, 2, '011', 'Stop kran', 0, 'bh', 15000, 0),
+(123, 2, '011', 'Meteran air', 0, 'bh', 125000, 0),
+(124, 2, '011', 'Pintu KM PVC', 0, 'bh', 225000, 0),
+(125, 2, '011', 'Septic tank', 0, 'bh', 650000, 0),
+(126, 2, '012', 'Selot besar', 0, 'bh', 90000, 0),
+(127, 2, '012', 'Selot kecil', 0, 'bh', 45000, 0),
+(128, 2, '012', 'Engsel pintu', 0, 'bh', 20000, 0),
+(129, 2, '012', 'Engsel jendela', 0, 'bh', 17500, 0),
+(130, 2, '012', 'Grendel', 0, 'bh', 7500, 0),
+(131, 2, '012', 'Hak angin', 0, 'bh', 12500, 0),
+(132, 2, '013', 'Cor jalan tapak', 0, 'm2', 150000, 0),
+(133, 2, '014', 'Titik lampu', 0, 'ttk', 125000, 0),
+(134, 2, '014', 'Saklar lampu', 0, 'ttk', 125000, 0),
+(135, 2, '014', 'Stop kontak', 0, 'ttk', 125000, 0),
+(136, 2, '014', 'MCB', 0, 'ttk', 140000, 0),
+(137, 2, '014', 'Meteran listrik / BP + SLO', 0, 'bh', 2250000, 0),
+(138, 2, '002', 'Pasangan batu alam', 0, 'm2', 650000, 0),
+(139, 2, '011', 'closet duduk ex china', 0, 'bh', 800000, 0),
+(140, 2, '005', 'Keramik Granit 60/60', 0, 'm2', 235000, 0),
+(141, 2, '008', 'Atap spandek lantai 2', 0, 'm2', 225000, 0),
+(142, 2, '009', 'Stross ø 30', 0, 'm3', 5500000, 0),
+(143, 2, '009', 'Beton sloof 15x20', 0, 'm3', 4450000, 0),
+(144, 2, '009', 'Pelat lantai 2 & teras t=10', 0, 'm3', 5275000, 0),
+(145, 2, '009', 'Bordes & anak tangga', 0, 'm3', 3250000, 0),
+(146, 2, '009', 'Beton dak kanopy & Meja dapur', 0, 'm3', 1750000, 0),
+(147, 2, '004', 'Plafon Calsiboard', 0, 'm2', 50000, 0),
+(148, 2, '007', 'Cat Plafond', 0, 'm2', 18500, 0),
+(149, 3, '001', 'bouwplank', 0, 'm1', 12000, 0),
+(150, 3, '001', 'Galian tanah', 0, 'm3', 60000, 0),
+(151, 3, '001', 'Pasang batu kumbung 1:3:10', 2, 'm3', 385000, 0),
+(152, 3, '001', 'Urugan pasir pondasi', 0, 'm3', 264000, 0),
+(153, 3, '001', 'Urug kembali lubang pondasi', 0, 'm3', 18500, 0),
+(154, 3, '002', 'Pasangan bata merah trassram', 0, 'm2', 93250, 0),
+(155, 3, '002', 'Pasangan bata merah 1:4:10', 0, 'm2', 90500, 0),
+(156, 3, '003', 'Atap Galvalum', 0, 'm2', 110000, 0),
+(157, 3, '003', 'List plank', 0, 'm1', 48000, 0),
+(158, 3, '004', 'Rangka plafon', 0, 'm2', 17500, 0),
+(159, 3, '004', 'Plafon Gypsumboard', 0, 'm2', 125000, 0),
+(160, 3, '004', 'List Gypsum', 0, 'm1', 20000, 0),
+(161, 3, '005', 'Keramik 40/40', 0, 'm2', 110000, 0),
+(162, 3, '005', 'Keramik Dinding 20/20 KM', 0, 'm2', 125000, 0),
+(163, 3, '005', 'Keramik Lantai 20/20 KM', 0, 'm2', 127500, 0),
+(164, 3, '006', 'Kusen pintu Alumunium', 0, 'plong', 375000, 0),
+(165, 3, '006', 'Kusen dan Daun jendela', 0, 'plong', 650000, 0),
+(166, 3, '006', 'Daun pintu utama panil', 0, 'bh', 550000, 0),
+(167, 3, '006', 'Daun pintu double triplex', 0, 'bh', 225000, 0),
+(168, 3, '007', 'Cat dinding', 0, 'm2', 18000, 0),
+(169, 3, '007', 'Cat list plank', 0, 'm2', 20000, 0),
+(170, 3, '007', 'Cat genteng', 0, 'm2', 22500, 0),
+(171, 3, '008', 'Genteng beton', 0, 'm2', 82500, 0),
+(172, 3, '008', 'Bubungan', 0, 'm1', 55000, 0),
+(173, 3, '008', 'Plafond', 0, 'm2', 67500, 0),
+(174, 3, '002', 'Pasangan bata merah 1:4', 0, 'm2', 98500, 0),
+(175, 3, '006', 'Pintu dan Kusen kamar mandi', 0, 'bh', 850000, 0),
+(176, 3, '009', 'Beton Sloff 10x15', 0, 'm3', 2250000, 0),
+(177, 3, '009', 'Beton kolom 10x10', 0, 'm3', 2285000, 0),
+(178, 3, '009', 'Beton dak kanopy', 0, 'm3', 950000, 0),
+(179, 3, '009', 'Beton ring balok 10x15', 0, 'm3', 2265000, 0),
+(180, 3, '009', 'Stross ø 20', 0, 'm3', 1850000, 0),
+(181, 3, '010', 'Plesteran dan Acian', 0, 'm2', 52500, 0),
+(182, 3, '010', 'Tali air', 0, 'm1', 9000, 0),
+(183, 3, '011', 'Pipa PVC 4"', 0, 'btg', 75000, 0),
+(184, 3, '011', 'Pipa PVC 3"', 0, 'btg', 50000, 0),
+(185, 3, '011', 'Pipa PVC 1/2"AW', 0, 'btg', 27000, 0),
+(186, 3, '011', 'Closet jongkok', 0, 'bh', 175000, 0),
+(187, 3, '011', 'Avur', 0, 'bh', 15000, 0),
+(188, 3, '011', 'Floor drainage', 0, 'bh', 12500, 0),
+(189, 3, '011', 'Kran air 1/2"', 0, 'bh', 15000, 0),
+(190, 3, '011', 'Keni 1/2"', 0, 'bh', 3000, 0),
+(191, 3, '011', 'Keni drat dalam 1/2"', 0, 'bh', 2500, 0),
+(192, 3, '011', 'Keni 4"', 0, 'bh', 6000, 0),
+(193, 3, '011', 'Overloop 3/4" - 1/2"', 0, 'bh', 3000, 0),
+(194, 3, '011', 'Sock drat dalam 1/2"', 0, 'bh', 2500, 0),
+(195, 3, '011', 'Tee 1/2"', 0, 'bh', 2500, 0),
+(196, 3, '011', 'Stop kran', 0, 'bh', 15000, 0),
+(197, 3, '011', 'Meteran air', 0, 'bh', 125000, 0),
+(198, 3, '011', 'Pintu KM PVC', 0, 'bh', 225000, 0),
+(199, 3, '011', 'Septic tank', 0, 'bh', 650000, 0),
+(200, 3, '012', 'Selot besar', 0, 'bh', 90000, 0),
+(201, 3, '012', 'Selot kecil', 0, 'bh', 45000, 0),
+(202, 3, '012', 'Engsel pintu', 0, 'bh', 20000, 0),
+(203, 3, '012', 'Engsel jendela', 0, 'bh', 17500, 0),
+(204, 3, '012', 'Grendel', 0, 'bh', 7500, 0),
+(205, 3, '012', 'Hak angin', 0, 'bh', 12500, 0),
+(206, 3, '013', 'Cor jalan tapak', 0, 'm2', 150000, 0),
+(207, 3, '014', 'Titik lampu', 0, 'ttk', 125000, 0),
+(208, 3, '014', 'Saklar lampu', 0, 'ttk', 125000, 0),
+(209, 3, '014', 'Stop kontak', 0, 'ttk', 125000, 0),
+(210, 3, '014', 'MCB', 0, 'ttk', 140000, 0),
+(211, 3, '014', 'Meteran listrik / BP + SLO', 0, 'bh', 2250000, 0),
+(212, 3, '002', 'Pasangan batu alam', 0, 'm2', 650000, 0),
+(213, 3, '011', 'closet duduk ex china', 0, 'bh', 800000, 0),
+(214, 3, '005', 'Keramik Granit 60/60', 0, 'm2', 235000, 0),
+(215, 3, '008', 'Atap spandek lantai 2', 0, 'm2', 225000, 0),
+(216, 3, '009', 'Stross ø 30', 0, 'm3', 5500000, 0),
+(217, 3, '009', 'Beton sloof 15x20', 0, 'm3', 4450000, 0),
+(218, 3, '009', 'Pelat lantai 2 & teras t=10', 0, 'm3', 5275000, 0),
+(219, 3, '009', 'Bordes & anak tangga', 0, 'm3', 3250000, 0),
+(220, 3, '009', 'Beton dak kanopy & Meja dapur', 0, 'm3', 1750000, 0),
+(221, 3, '004', 'Plafon Calsiboard', 0, 'm2', 50000, 0),
+(222, 3, '007', 'Cat Plafond', 0, 'm2', 18500, 0);
 
 -- --------------------------------------------------------
 
@@ -186,17 +335,19 @@ CREATE TABLE `proyek` (
   `nama_proyek` varchar(25) NOT NULL,
   `type` int(11) NOT NULL,
   `pemilik_proyek` varchar(25) NOT NULL,
-  `keterangan_lain` text NOT NULL
+  `status` int(11) NOT NULL,
+  `keterangan_lain` text NOT NULL,
+  `ket_perbaikan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `proyek`
 --
 
-INSERT INTO `proyek` (`kd_proyek`, `nama_proyek`, `type`, `pemilik_proyek`, `keterangan_lain`) VALUES
-('1', 'Rumah Sederhana', 45, 'Nadhief Fawaz', 'sederhana'),
-('2', 'Rumah', 36, 'Nadhief', 'sederhana'),
-('3', 'Perumahan', 60, 'Rezaka', 'komersil');
+INSERT INTO `proyek` (`kd_proyek`, `nama_proyek`, `type`, `pemilik_proyek`, `status`, `keterangan_lain`, `ket_perbaikan`) VALUES
+('1', 'Rumah Sederhana', 45, 'Nadhief Fawaz', 1, 'sederhana', ''),
+('2', 'Rumah', 36, 'Nadhief', 2, 'sederhana', 'perbaiki jumlah total all'),
+('3', 'Perumahan', 60, 'Rezaka', 0, 'komersil', '');
 
 -- --------------------------------------------------------
 
@@ -209,6 +360,15 @@ CREATE TABLE `proyekrab` (
   `id_rab` varchar(5) NOT NULL,
   `kd_proyek` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `proyekrab`
+--
+
+INSERT INTO `proyekrab` (`id_proyekrab`, `id_rab`, `kd_proyek`) VALUES
+('PRY1', '001', '1'),
+('PRY2', '002', '2'),
+('PRY3', '003', '3');
 
 -- --------------------------------------------------------
 
@@ -635,7 +795,9 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (9, 5, 2),
 (10, 5, 4),
 (11, 5, 5),
-(12, 2, 6);
+(12, 2, 6),
+(13, 4, 5),
+(16, 3, 7);
 
 -- --------------------------------------------------------
 
@@ -658,7 +820,8 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 (3, 'Menu'),
 (4, 'Rincian'),
 (5, 'Perancangan'),
-(6, 'laporan');
+(6, 'laporan'),
+(7, 'RAB');
 
 -- --------------------------------------------------------
 
@@ -712,8 +875,9 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (8, 1, 'Pengguna', 'pengguna', 'fas fa-fw fa-user', 1),
 (9, 4, 'Rincian Upah', 'upah', 'fas fa-fw fa-donate', 1),
 (10, 5, 'Tambah Proyek', 'proyek', 'fas fa-fw fa-building', 1),
-(11, 5, 'Data Pengeluaran', 'keuangan', 'fas fa-fw fa-folder', 1),
-(12, 6, 'Data Pengeluaran', 'laporan/pengeluaran', 'fas fa-fw fa-file-invoice-dollar\r\n', 1);
+(11, 5, 'Data Pengeluaran', 'rab/list_proyek', 'fas fa-fw fa-folder', 1),
+(12, 6, 'Data Pengeluaran', 'laporan/pengeluaran', 'fas fa-fw fa-file-invoice-dollar\r\n', 1),
+(13, 7, 'Data Pengeluaran', 'datarab/pengeluaran', 'fas fa-fw fa-folder', 1);
 
 --
 -- Indexes for dumped tables
@@ -801,7 +965,7 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `pekerjaan`
 --
 ALTER TABLE `pekerjaan`
-  MODIFY `id_pekerjaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id_pekerjaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
 --
 -- AUTO_INCREMENT for table `proyek_bahan`
 --
@@ -821,12 +985,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `user_role`
 --
@@ -836,7 +1000,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -109,6 +109,16 @@ class Proyek_model extends CI_Model
         ");
         return $query;
     }
+    public function getpekerjaantotalpr($kd_proyek)
+    {
+        $query = $this->db->query("
+       select sum(p.volume * p.harga_satuan) as total
+        from pekerjaan p 
+        left join jenis_pekerjaan jp on p.id_rab=jp.id_rab
+        where p.kd_proyek = '$kd_proyek'
+        ");
+        return $query;
+    }
 
     public function upstatusvalidasi($statusvalidasi, $kd_proyek)
     {

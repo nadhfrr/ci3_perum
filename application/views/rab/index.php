@@ -14,7 +14,7 @@
             <!-- DataTables -->
             <div class="card mb-3">
                 <div class="card-header">
-                    <a href="<?php echo site_url('keuangan/list_proyek') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                    <a href="<?php echo site_url('rab/list_proyek') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
                 </div>
                 <div class="card-body">
                     <h5><b>I</b> Pekerjaan Pengukuran dan Pondasi</h5>
@@ -792,13 +792,13 @@
 
 
                                         <th>Sub.Total ALL :</th>
-                                        <th><span class="totalForks">Rp<?= number_format($totalraball['total']); ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalall['total']); ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
 
                             <a href="<?= base_url('rab/validasi/1/' . $proyek->kd_proyek); ?>" class="btn btn-primary">Konfirmasi</a>
-                            <a href="" class="btn btn-danger" data-toggle="modal" data-target="#validasiModal">Perbaikan</a>
+                            <a href="" class="btn btn-danger" data-toggle="modal" data-target="#tolakValidasiModal">Perbaikan</a>
 
                     </div>
                 </div>
@@ -812,16 +812,16 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="validasiModal" tabindex="-1" aria-labelledby="validasiModalLabel" aria-hidden="true">
+<div class="modal fade" id="tolakValidasiModal" tabindex="-1" aria-labelledby="tolakValidasiModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="validasiModalLabel">Detail Pengeluaran RAB</h5>
+                <h5 class="modal-title" id="tolakValidasiModalLabel">Detail Pengeluaran RAB</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('rab/tolak_validasi/' . $proyek->kd_proyek . '') ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php base_url('rab/tolak_validasi/') ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="ket_perbaikan">Catatan Perbaikan:</label>
