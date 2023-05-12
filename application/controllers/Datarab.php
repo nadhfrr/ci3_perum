@@ -52,6 +52,8 @@ class Datarab extends CI_Controller
         $data['totalrab13'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '013')->row_array();
         $data['totalrab14'] = $this->Proyek_model->getpekerjaantotal($kd_proyek, '014')->row_array();
 
+        $data['totalall'] = $this->Proyek_model->getpekerjaantotalpr($kd_proyek)->row_array();
+
 
         $data['totalraball'] = $this->Proyek_model->getpekerjaantotalall()->row_array();
 
@@ -64,6 +66,7 @@ class Datarab extends CI_Controller
         $this->load->view('datarab/index', $data);
         $this->load->view('templates/footer');
     }
+
     public function pengeluaran()
     {
         $data['title'] = 'Daftar Pengeluaran RAB';
