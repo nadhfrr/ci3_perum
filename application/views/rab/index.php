@@ -797,7 +797,7 @@
                                 </tfoot>
                             </table>
 
-                            <a href="<?= base_url('rab/validasi/1/' . $proyek->kd_proyek); ?>" class="btn btn-primary">Konfirmasi</a>
+                            <a href="<?= base_url('rab/validasi/1/' . $proyek->kd_proyek); ?>" class="btn btn-success">Konfirmasi</a>
                             <a href="" class="btn btn-danger" data-toggle="modal" data-target="#tolakValidasiModal">Perbaikan</a>
 
                     </div>
@@ -829,7 +829,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-primary btn-sml">Simpan</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                 </div>
             </form>
