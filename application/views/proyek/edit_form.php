@@ -70,7 +70,7 @@
                                 </div>
                             </div>
 
-                            <input class="btn btn-dark" type="submit" name="btn" value="Simpan" />
+                            <input class="btn btn-primary btn-sml" type="submit" name="btn" value="Simpan" />
                         </form>
                         <?php endforeach; ?>
                     </div>
