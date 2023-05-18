@@ -98,8 +98,14 @@ class Rab extends CI_Controller
         } else {
             echo "Ditolak";
         }
-        $this->Proyek_model->upstatusvalidasi($statusvalidasi, $kd_proyek);
 
+        $data = [
+            'ket_perbaikan' => $this->input->post('ket_perbaikan')
+        ];
+        // var_dump($data);
+        // die;
+        $this->db->where('kd_proyek', $kd_proyek);
+        $this->db->update('proyek', $data);
         redirect('rab/list_proyek');
     }
 

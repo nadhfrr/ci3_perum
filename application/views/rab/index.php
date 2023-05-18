@@ -821,7 +821,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?php base_url('rab/tolak_validasi/') ?>" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url('rab/tolak_validasi/' . $proyek->kd_proyek . '') ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="ket_perbaikan">Catatan Perbaikan:</label>
@@ -829,7 +829,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary btn-sml">Simpan</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                 </div>
             </form>

@@ -67,7 +67,7 @@
                                     <td></td>
 
                                     <th>Sub.Total I :</th>
-                                    <th><span class="totalForks">Rp<?= number_format ($totalrab1['total']) ?></span></th>
+                                    <th><span class="totalForks">Rp<?= number_format($totalrab1['total']) ?></span></th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -121,7 +121,7 @@
                                         <td></td>
 
                                         <th>Sub.Total II :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab2['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab2['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -174,7 +174,7 @@
                                         <td></td>
 
                                         <th>Sub.Total III :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab3['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab3['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -227,7 +227,7 @@
                                         <td></td>
 
                                         <th>Sub.Total IV :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab4['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab4['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -280,7 +280,7 @@
                                         <td></td>
 
                                         <th>Sub.Total V :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab5['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab5['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -333,7 +333,7 @@
                                         <td></td>
 
                                         <th>Sub.Total VI :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab6['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab6['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -386,7 +386,7 @@
                                         <td></td>
 
                                         <th>Sub.Total VII :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab7['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab7['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -439,7 +439,7 @@
                                         <td></td>
 
                                         <th>Sub.Total VIII :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab8['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab8['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -492,7 +492,7 @@
                                         <td></td>
 
                                         <th>Sub.Total IX :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab9['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab9['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -545,7 +545,7 @@
                                         <td></td>
 
                                         <th>Sub.Total X :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab10['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab10['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -598,7 +598,7 @@
                                         <td></td>
 
                                         <th>Sub.Total XI :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab11['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab11['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -651,7 +651,7 @@
                                         <td></td>
 
                                         <th>Sub.Total XII :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab12['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab12['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -704,7 +704,7 @@
                                         <td></td>
 
                                         <th>Sub.Total XIII :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab13['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab13['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -757,7 +757,7 @@
                                         <td></td>
 
                                         <th>Sub.Total XIV :</th>
-                                        <th><span class="totalForks">Rp<?= number_format ($totalrab14['total']) ?></span></th>
+                                        <th><span class="totalForks">Rp<?= number_format($totalrab14['total']) ?></span></th>
                                     </tr>
                                 </tfoot>
 
@@ -798,7 +798,7 @@
                             </table>
 
                             <a href="<?= base_url('datarab/validasi/1/' . $proyek->kd_proyek); ?>" class="btn btn-primary">Konfirmasi</a>
-                            <a href="" class="btn btn-danger" data-toggle="modal" data-target="#validasiModal">Perbaikan</a>
+                            <a href="" class="btn btn-danger" data-toggle="modal" data-target="#tolakValidasiModal">Perbaikan</a>
 
                     </div>
                 </div>
@@ -812,24 +812,24 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="validasiModal" tabindex="-1" aria-labelledby="validasiModalLabel" aria-hidden="true">
+<div class="modal fade" id="tolakValidasiModal" tabindex="-1" aria-labelledby="tolakValidasiModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="validasiModalLabel">Detail Pengeluaran RAB</h5>
+                <h5 class="modal-title" id="tolakValidasiModalLabel">Detail Pengeluaran RAB</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('datarab/tolak_validasi/' . $proyek->kd_proyek . '') ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php base_url('datarab/tolak_validasi') ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="ket_perbaikan">Catatan Perbaikan:</label>
-                        <textarea class="form-control" id="ket_perbaikan" name="ket_perbaikan" rows="2"></textarea>
+                        <textarea class="form-control <?php echo form_error('ket_perbaikan') ? 'is-invalid' : '' ?>" name="ket_perbaikan" rows="2" id="ket_perbaikan"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <a href="<?= base_url('datarab/validasi/2/' . $proyek->kd_proyek); ?>" class="btn btn-secondary">Simpan</a>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                 </div>
             </form>
