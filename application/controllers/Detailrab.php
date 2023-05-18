@@ -13,7 +13,7 @@ class Detailrab extends CI_Controller
 
     public function index($kd_proyek)
     {
-        $data['title'] = 'Detail Daftar Proyek';
+        $data['title'] = 'Detail Daftar RAB';
         $data["detailrab"] = $this->detailrab_model->getAll();
 
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
