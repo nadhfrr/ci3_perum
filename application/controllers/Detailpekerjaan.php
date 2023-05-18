@@ -81,40 +81,40 @@ class Detailpekerjaan extends CI_Controller
     //     $this->load->view('templates/footer');
     // }
 
-    // public function edit($kd_proyek = null, $id_pekerjaan = null)
-    // {
-    //     if (!isset($id_pekerjaan)) redirect('detailpekerjaan');
+    public function edit($kd_proyek = null, $id_pekerjaan = null)
+    {
+        if (!isset($id_pekerjaan)) redirect('detailpekerjaan');
 
-    //     $data['title'] = 'Edit Volume Rincian Detail Pekerjaan';
-    //     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-    //     // dead($kd_proyek);
-    //     $where = array('kd_proyek' => $kd_proyek, 'id_pekerjaan' => $id_pekerjaan);
-    //     $data['detailpekerjaan'] = $this->detailpekerjaan_model->edit_data($where, 'pekerjaan')->result_array();
-    //     $getidrab = $this->detailpekerjaan_model->edit_data($where, 'pekerjaan')->result_array();
-    //     $data['getidrab'] = $getidrab[0]['id_rab'];
-    //     $data['getkdproyek'] = $getidrab[0]['kd_proyek'];
+        $data['title'] = 'Edit Volume Rincian Detail Pekerjaan';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        // dead($kd_proyek);
+        $where = array('kd_proyek' => $kd_proyek, 'id_pekerjaan' => $id_pekerjaan);
+        $data['detailpekerjaan'] = $this->detailpekerjaan_model->edit_data($where, 'pekerjaan')->result_array();
+        $getidrab = $this->detailpekerjaan_model->edit_data($where, 'pekerjaan')->result_array();
+        $data['getidrab'] = $getidrab[0]['id_rab'];
+        $data['getkdproyek'] = $getidrab[0]['kd_proyek'];
 
-    //     $detailpekerjaan = $this->detailpekerjaan_model;
-    //     $validation = $this->form_validation;
-    //     $validation->set_rules($detailpekerjaan->rules());
-    //     // dead($detailpekerjaan);
-    //     // var_dump($data['total']);
-    //     // die;
-    //     if ($validation->run() == false) {
-    //     } else {
-    //         $detailpekerjaan->update();
-    //         $this->session->set_flashdata('success', 'Berhasil disimpan');
-    //         // redirect('detailpekerjaan');
-    //     }
-    //     $this->load->view('templates/header', $data);
-    //     $this->load->view('templates/sidebar', $data);
-    //     $this->load->view('templates/topbar', $data);
-    //     $this->load->view('detailpekerjaan/edit_form', $data);
-    //     $this->load->view('templates/footer');
+        $detailpekerjaan = $this->detailpekerjaan_model;
+        $validation = $this->form_validation;
+        $validation->set_rules($detailpekerjaan->rules());
+        // dead($detailpekerjaan);
+        // var_dump($data['total']);
+        // die;
+        if ($validation->run() == false) {
+        } else {
+            $detailpekerjaan->update();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            // redirect('detailpekerjaan');
+        }
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('detailpekerjaan/edit_form', $data);
+        $this->load->view('templates/footer');
 
-    //     $data["detailpekerjaan"] = $detailpekerjaan->getById($id_pekerjaan);
-    //     if (!$data["detailpekerjaan"]) show_404();
-    // }
+        $data["detailpekerjaan"] = $detailpekerjaan->getById($id_pekerjaan);
+        if (!$data["detailpekerjaan"]) show_404();
+    }
 
     // public function delete($id = null)
     // {
