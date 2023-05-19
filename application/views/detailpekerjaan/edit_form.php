@@ -32,7 +32,9 @@
                             <input type="hidden" name="id_pekerjaan" value="<?php echo $dpk['id_pekerjaan'] ?>" />
                             <input type="hidden" name="id_rab" value="<?php echo $dpk['id_rab'] ?>" />
                             <input type="hidden" name="kd_proyek" value="<?php echo $dpk['kd_proyek'] ?>" />
+                            <p><b>Nama Pekerjaan : <?php echo $dpk['nama_pekerjaan'] ?></b></p>
                             <input type="hidden" name="nama_pekerjaan" value="<?php echo $dpk['nama_pekerjaan'] ?>" />
+                            <!-- <p>Satuan : <?php echo $dpk['satuan'] ?></p> -->
                             <input type="hidden" name="satuan" value="<?php echo $dpk['satuan'] ?>" />
 
                             <div class="form-group">

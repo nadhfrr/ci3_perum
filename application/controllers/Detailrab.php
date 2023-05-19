@@ -9,13 +9,14 @@ class Detailrab extends CI_Controller
         parent::__construct();
         $this->load->model("detailrab_model");
         $this->load->library('form_validation');
+        $this->load->model("proyek_model");
     }
 
     public function index($kd_proyek)
-    {
-        $data['title'] = 'Detail Daftar RAB';
+    {   
+        $data['title'] = ' Daftar Detail RAB';
         $data["detailrab"] = $this->detailrab_model->getAll();
-
+        $data["proyek"] = $this->proyek_model->getById($kd_proyek);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $data['detailrab'] = $this->detailrab_model->getjenisrab($kd_proyek)->result_array();
